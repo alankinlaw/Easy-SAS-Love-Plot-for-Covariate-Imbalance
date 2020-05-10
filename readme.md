@@ -5,7 +5,6 @@ The <b>%love</b> SAS macro allows the user to easily produce graphical displays 
 Author: Alan Kinlaw
 
 Created: 09 May 2020
-
 Updated: 10 May 2020
 
 ### Goal
@@ -52,9 +51,9 @@ A figure (.png file) displaying crude and weighted or matched standardized diffe
 		
 	D. <b>THRESHOLD</b>: Specify the absolute value of your threshold for identifying potentially meaningful covariate imbalance. This will generate reference lines in the figure. If you do not want threshold reference lines in the figure, then specify a value of <b>threshold=0</b> in your call of the %love macro. <i>The default threshold is 0.1.</i>
 	
-	E. <b>HORIZONTAL</b> has two recommended specification options, "bands" (the default) or "lines". Note that this parameter must be specified in <b>lowercase</b> only. <i>The default setting is for bands.</i>
+	E. <b>HORIZONTAL</b> has two recommended specification options, "bands" (the default) or "lines". Note that this parameter must be specified in <b>lowercase</b> only. <i>The default setting for this parameter is to use bands.</i>
 		
-	  <b>bands</b>: This default setting will use light gray horizontal bands to guide the reader's eye horizontally across the figure from covariate names to their standardized mean differences. 
+	<b>bands</b>: This default setting will use light gray horizontal bands to guide the reader's eye horizontally across the figure from covariate names to their standardized mean differences. 
 		
 	  <b>lines</b>: The figure will use light gray horizontal lines to guide the reader's eye from labels to values. 
 		
