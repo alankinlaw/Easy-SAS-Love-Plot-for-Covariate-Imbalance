@@ -9,7 +9,7 @@ Oncologist. 2019:theoncologist.2019-0338. doi:10.1634/theoncologist.2019-0338
 *********************************************************************************;
 
 * Store the love.sas macro in a known location and paste that location in place of
-"insert file-path-here" below. Then execute the %include statement, dataset 
+"insert-filepath-here" below. Then execute the %include statement, dataset 
 creation, and whichever call(s) of the macro you wish to see. ;
 
 %include "insert-filepath-here\love.sas";
