@@ -66,7 +66,7 @@ A figure (.png file) that displays standardized mean differences for each covari
 5. Execute the macro. 
 
 
-### Example figure (please see full example in run_love_example.sas)
+## Example figure (please see full example in run_love_example.sas)
 
 The image below is based on published standardized mean difference data from Table 1 of Mitchell AP, Kinlaw AC, Peacock-Hinton S, Dusetzina SB, Sanoff HK, Lund JL. Use of High-Cost Cancer Treatments in Academic and Nonacademic Practice. Oncologist. 2019:theoncologist.2019-0338. doi:10.1634/theoncologist.2019-0338
 
@@ -77,6 +77,6 @@ Using these data and the macro call below, we generate a figure with magnitude-s
 ![](https://github.com/alankinlaw/Easy-SAS-Love-Plot-for-Covariate-Imbalance/blob/master/folder/love_sorted_Weighted__1_bands_20200510T174441.png)
  
  
-### License and warranty information
+## License and warranty information
 
 The published material is shared under a GNU General Public License v3.0.  It is being distributed without warranty of any kind, either expressed or implied. The responsibility for the interpretation and use of the material lies with the reader. In no event shall the Author be liable for damages arising from its use.
