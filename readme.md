@@ -73,9 +73,7 @@ The image below is based on published standardized mean difference data from Tab
 
 Using these data and this macro call generates a figure with magnitude-sorted standardized mean differences before and after weighting, using defaults for parameters iv (0.1) and v (bands):
    
-     	%love(working_directory = <i>insert-filepath-here</i>,
-	      sortchoice = sorted,
-	      method = WEIGHT);
+    %love(working_directory = <i>insert-filepath-here</i>, sortchoice = sorted, method = WEIGHT);
 
 ![](https://github.com/alankinlaw/Easy-SAS-Love-Plot-for-Covariate-Imbalance/blob/master/folder/love_sorted_Weighted__1_bands_20200510T174441.png)
  
