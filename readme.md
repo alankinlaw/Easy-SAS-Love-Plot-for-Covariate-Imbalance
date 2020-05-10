@@ -72,7 +72,7 @@ A figure (.png file) that displays standardized mean differences for each covari
 	      sortchoice = sorted,
 	      method = WEIGHT);
 
-### Example
+### Example figure (please see full example in separate files)
 
 The image below is based on published standardized mean difference data from Table 1 of:
 
