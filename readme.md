@@ -74,8 +74,13 @@ A figure (.png file) that displays standardized mean differences for each covari
 
 ### Example
 
+The image below is based on published standardized mean difference data from Table 1 of:
 
-![](C:\Users\akinlaw\OneDrive - University of North Carolina at Chapel Hill\Textandtools\Tools - SAS\easy-love-plot\love_sorted_Weighted__1_bands_20200510T174441.png)
+Mitchell AP, Kinlaw AC, Peacock-Hinton S, Dusetzina SB, Sanoff HK, Lund JL. 
+Use of High-Cost Cancer Treatments in Academic and Nonacademic Practice. 
+Oncologist. 2019:theoncologist.2019-0338. doi:10.1634/theoncologist.2019-0338
+
+![](https://github.com/alankinlaw/Easy-SAS-Love-Plot-for-Covariate-Imbalance/blob/master/folder/love_sorted_Weighted__1_bands_20200510T174441.png)
  
  
 ### License and warranty information
