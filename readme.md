@@ -33,11 +33,11 @@ A figure (.png file) displaying crude and weighted or matched standardized diffe
 
 ### 1. Generate the input dataset described above.
 ### 2. Identify filepath for the working directory that holds the input dataset and will be the target location for the output figure.
-### 3. Specify the three required input parameters for the %LOVE macro:
+### 3. Specify the three required input parameters for the %love macro:
 	
 #### A. <b>WORKING_DIRECTORY</b>: Specify the directory that contains the input dataset and where the final plots will be stored.
 	
-# B. <b>SORTCHOICE</b> has two specification options, "sorted" or "original" (not case sensitive):
+#### B. <b>SORTCHOICE</b> has two specification options, "sorted" or "original" (not case sensitive):
 
 	<b>SORTED</b>: The figure will display covariates in descending magnitude of crude standardized mean difference.
 		
