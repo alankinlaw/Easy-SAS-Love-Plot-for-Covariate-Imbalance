@@ -68,7 +68,7 @@ A figure (.png file) that displays standardized mean differences for each covari
 5. Execute the macro. 
 
 
-### Example figure (please see full example in separate files)
+### Example figure (please see full example in run_love_example.sas)
 
 The image below is based on published standardized mean difference data from Table 1 of Mitchell AP, Kinlaw AC, Peacock-Hinton S, Dusetzina SB, Sanoff HK, Lund JL. Use of High-Cost Cancer Treatments in Academic and Nonacademic Practice. Oncologist. 2019:theoncologist.2019-0338. doi:10.1634/theoncologist.2019-0338
 
