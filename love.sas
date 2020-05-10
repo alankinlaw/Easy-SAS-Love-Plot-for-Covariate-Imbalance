@@ -133,19 +133,19 @@ options mprint mlogic;
 * To uncomment an example call, highlight it and simultaneously type CTRL+SHIFT+/ --- to recomment it out, highlight it and simultaneously type CTRL+/ ;
 
 * Example macro call for a magnitude-sorted, weighting-based figure that uses defaults for threshold and eye-guide parameters (D,E);
-/*%love(working_directory = C:\Users\akinlaw,*/
+/*%love(working_directory = insert-filepath-here,*/
 /*	  sortchoice = sorted,*/
 /*	  method = w);*/
 
 * Example macro call for an original-order, weighting-based figure that changes the balance threshold to 0.08 and uses eye-guide lines instead of bands;
-/*%love(working_directory = C:\Users\akinlaw,*/
+/*%love(working_directory = insert-filepath-here,*/
 /*	  sortchoice = original,*/
 /*	  method = w,*/
 /*	  threshold = 0.08,*/
 /*	  horizontal = lines);*/
 
 * Example macro call for a magnitude-sorted, matching-based figure that eliminates threshold lines and eye-guide lines or bands;
-/*%love(working_directory = C:\Users\akinlaw,*/
+/*%love(working_directory = insert-filepath-here,*/
 /*	  sortchoice = sorted,*/
 /*	  method = m,*/
 /*	  threshold = 0,*/
