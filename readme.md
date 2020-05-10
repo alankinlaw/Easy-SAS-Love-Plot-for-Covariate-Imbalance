@@ -33,28 +33,28 @@ A figure (.png file) displaying crude and weighted or matched standardized diffe
 
 1. Generate the input dataset described above.
 2. Identify filepath for the working directory that holds the input dataset and will be the target location for the output figure.
-3. Specify the three required input parameters for the %love macro:
+3. Specify the three required input parameters for the %love macro (i-iii):
 	
-   A. <b>WORKING_DIRECTORY</b>: Specify the directory that contains the input dataset and where the final plots will be stored.
+   i. <b>WORKING_DIRECTORY</b>: Specify the directory that contains the input dataset and where the final plots will be stored.
 	
-   B. <b>SORTCHOICE</b> has two specification options, "sorted" or "original" (not case sensitive):
+   ii. <b>SORTCHOICE</b> has two specification options, "sorted" or "original" (not case sensitive):
 
       - <b>SORTED</b>: The figure will display covariates in descending magnitude of crude standardized mean difference.
 		
       - <b>ORIGINAL</b>: The figure will display covariates in the order provided in the input dataset.
 			
-# C. <b>METHOD</b> has two specification options, "w" or "m" (not case sensitive):
+   iii. <b>METHOD</b> has two specification options, "w" or "m" (not case sensitive):
+   
+      - <b>W</b>: The figure key will specify that weighting was used to balance covariates.
 		
-	  <b>W</b>: The figure key will specify that weighting was used to balance covariates.
-		
-	  <b>M</b>: The figure key will specify that matching was used to balance covariates. 
+      - <b>M</b>: The figure key will specify that matching was used to balance covariates. 
 		
 		
 4. If desired, two optional parameters may be modified in the macro call. These will receive default values if not modified.
 		
-	D. <b>THRESHOLD</b>: Specify the absolute value of your threshold for identifying potentially meaningful covariate imbalance. This will generate reference lines in the figure. If you do not want threshold reference lines in the figure, then specify a value of <b>threshold=0</b> in your call of the %love macro. <i>The default threshold is 0.1.</i>
+    iv. <b>THRESHOLD</b>: Specify the absolute value of your threshold for identifying potentially meaningful covariate imbalance. This will generate reference lines in the figure. If you do not want threshold reference lines in the figure, then specify a value of <b>threshold=0</b> in your call of the %love macro. <i>The default threshold is 0.1.</i>
 	
-	E. <b>HORIZONTAL</b> has two recommended specification options, "bands" (the default) or "lines". Note that this parameter must be specified in <b>lowercase</b> only. <i>The default setting for this parameter is to use bands.</i>
+	v. <b>HORIZONTAL</b> has two recommended specification options, "bands" (the default) or "lines". Note that this parameter must be specified in <b>lowercase</b> only. <i>The default setting for this parameter is to use bands.</i>
 		
 	<b>bands</b>: This default setting will use light gray horizontal bands to guide the reader's eye horizontally across the figure from covariate names to their standardized mean differences. 
 		
