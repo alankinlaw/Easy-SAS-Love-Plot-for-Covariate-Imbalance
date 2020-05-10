@@ -1,6 +1,6 @@
 # Easy-SAS-Love-Plot-for-Covariate-Imbalance
 
-The <b>%love</b> SAS macro allows the user to easily produce graphical displays of covariate imbalance before and after adjustment, based on plots developed by Thomas Love.
+The <b>%love</b> SAS macro (love.sas) allows the user to easily produce graphical displays of covariate imbalance before and after adjustment, based on plots developed by Thomas Love.
 
 Author: Alan Kinlaw
 
