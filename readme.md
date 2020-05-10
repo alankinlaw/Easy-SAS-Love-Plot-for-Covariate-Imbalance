@@ -18,7 +18,7 @@ To create a figure that shows covariate imbalance across levels of a binary trea
 
 Standardized mean differences can either be generated in SAS or imported into SAS, and then fed into to this macro.
 
-The INPUT DATASET must contain three columns:
+The <b>INPUT DATASET</b> must contain three columns:
 
 1. <i>COVARIATE</i>: a list of the names of each covariate for which balance across exposure/treatment groups is being assessed, written as you might want it to appear in a manuscript's typical Table 1;
 
@@ -30,7 +30,7 @@ The input dataset can contain more than these three variables, but only these th
 
 ## Outputs
 
-A figure (.png file) displaying crude and weighted or matched standardized differences for each covariate of interest
+A figure (.png file) that displays standardized mean differences for each covariate of interest in crude and adjusted data
 
 ## Steps
 
@@ -66,8 +66,8 @@ A figure (.png file) displaying crude and weighted or matched standardized diffe
 	
 5. Execute the macro. Example call:
 
-		* Example macro call for a magnitude-sorted, weight-based figure using defaults for parameters iv and v ;
-		%love(working_directory = C:\Users\akinlaw,
+		* Example macro call for a magnitude-sorted, weight-based figure using defaults for parameters iv (0.1) and v (bands) ;
+		%love(working_directory = insert-filepath-here,
 			  sortchoice = sorted,
 			  method = WEIGHT);
 
