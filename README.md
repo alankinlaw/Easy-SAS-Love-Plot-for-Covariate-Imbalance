@@ -4,9 +4,7 @@ The <b>%love</b> SAS macro (love.sas) allows the user to quickly and easily prod
 
 Author: Alan Kinlaw
 
-Created: 09 May 2020
-
-Updated: 10 May 2020
+Created: 09 May 2020; Updated: 10 May 2020
 
 
 ## Goal
