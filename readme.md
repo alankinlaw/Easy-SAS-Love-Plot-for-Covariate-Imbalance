@@ -39,9 +39,9 @@ A figure (.png file) displaying crude and weighted or matched standardized diffe
 	
    B. <b>SORTCHOICE</b> has two specification options, "sorted" or "original" (not case sensitive):
 
-      <b>SORTED</b>: The figure will display covariates in descending magnitude of crude standardized mean difference.
+      - <b>SORTED</b>: The figure will display covariates in descending magnitude of crude standardized mean difference.
 		
-      <b>ORIGINAL</b>: The figure will display covariates in the order provided in the input dataset.
+      - <b>ORIGINAL</b>: The figure will display covariates in the order provided in the input dataset.
 			
 # C. <b>METHOD</b> has two specification options, "w" or "m" (not case sensitive):
 		
