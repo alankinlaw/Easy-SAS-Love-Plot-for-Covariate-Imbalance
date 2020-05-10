@@ -18,7 +18,7 @@ To create a figure that shows covariate imbalance across levels of a binary trea
 
 Standardized mean differences can either be generated in SAS or imported into SAS, and then fed into to this macro.
 
-The <b>INPUT DATASET</b> must contain three columns:
+The input dataset must be named <b>TABLE.SAS7BDAT</b> and contain three columns:
 
 1. <i>COVARIATE</i>: a list of the names of each covariate for which balance across exposure/treatment groups is being assessed, written as you might want it to appear in a manuscript's typical Table 1;
 
