@@ -9,12 +9,12 @@ Created: 09 May 2020
 Updated: 10 May 2020
 
 
-### Goal
+## Goal
 
 To create a figure that shows covariate imbalance across levels of a binary treatment/exposure before and after adjustment by weighting or matching.
 
 
-### Inputs
+## Inputs
 
 Standardized mean differences can either be generated in SAS or imported into SAS, and then fed into to this macro.
 
@@ -25,17 +25,17 @@ The INPUT DATASET must contain three columns:
 
 The input dataset can contain more than these three variables, but only these three will be used by the %love macro.
 
-### Outputs
+## Outputs
 
 A figure (.png file) displaying crude and weighted or matched standardized differences for each covariate of interest
 
-### Steps
+## Steps
 
-## 1. Generate the input dataset described above.
-## 2. Identify filepath for the working directory that holds the input dataset and will be the target location for the output figure.
-## 3. Specify the three required input parameters for the %LOVE macro:
+### 1. Generate the input dataset described above.
+### 2. Identify filepath for the working directory that holds the input dataset and will be the target location for the output figure.
+### 3. Specify the three required input parameters for the %LOVE macro:
 	
-# A. <b>WORKING_DIRECTORY</b>: Specify the directory that contains the input dataset and where the final plots will be stored.
+#### A. <b>WORKING_DIRECTORY</b>: Specify the directory that contains the input dataset and where the final plots will be stored.
 	
 # B. <b>SORTCHOICE</b> has two specification options, "sorted" or "original" (not case sensitive):
 
