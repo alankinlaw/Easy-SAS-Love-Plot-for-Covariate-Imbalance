@@ -19,9 +19,12 @@ To create a figure that shows covariate imbalance across levels of a binary trea
 Standardized mean differences can either be generated in SAS or imported into SAS, and then fed into to this macro.
 
 The INPUT DATASET must contain three columns:
-1. COVARIATE -- a list of the names of each covariate for which balance across exposure/treatment groups is being assessed, written as you might want it to appear in a manuscript's typical Table 1;
-2. CRUDE -- standardized mean differences for each covariate in the crude (unadjusted) data; and 
-3. POST -- standardized mean differences for each covariate after weighting, matching, or standardization 
+
+1. <i>COVARIATE</i>: a list of the names of each covariate for which balance across exposure/treatment groups is being assessed, written as you might want it to appear in a manuscript's typical Table 1;
+
+2. <i>CRUDE</i>: standardized mean differences for each covariate in the crude (unadjusted) data; and 
+
+3. <i>POST</i>: standardized mean differences for each covariate after weighting, matching, or standardization 
 
 The input dataset can contain more than these three variables, but only these three will be used by the %love macro.
 
@@ -53,13 +56,13 @@ A figure (.png file) displaying crude and weighted or matched standardized diffe
 		
     iv. The <b>THRESHOLD</b> parameter: Specify the absolute value of your threshold for identifying potentially meaningful covariate imbalance. This will generate reference lines in the figure. If you do not want threshold reference lines in the figure, then specify a value of <b>threshold=0</b> in your call of the %love macro. <i>The default threshold is 0.1.</i>
     
-    v. <b>HORIZONTAL</b> has two recommended specification options, "bands" (the default) or "lines" (<u>case sensitive</u>). 
+    v. The <b>HORIZONTAL</b> parameter has two recommended specification options, "bands" or "lines" (<b>case sensitive</b>). 
     		
-      - <b>bands</b>: This default setting will use light gray horizontal bands to guide the reader's eye horizontally across the figure from covariate names to their standardized mean differences. 
+      - <i>bands</i>: This default setting will use light gray horizontal bands to guide the reader's eye horizontally across the figure from covariate names to their standardized mean differences. 
 		
-      - <b>lines</b>: The figure will use light gray horizontal lines to guide the reader's eye from labels to values. 
+      - <i>lines</i>: The figure will use light gray horizontal lines to guide the reader's eye from labels to values. 
 		
-      - A third option is to use neither bands nor lines, leaving no guide for the reader's eye. If this is desired, then specify "HORIZONTAL = " in your call of the %love macro.
+      - A third option is to use neither bands nor lines, which leaves no guide for the reader's eye. If this is desired, then specify "HORIZONTAL = " in your call of the %love macro.
 	
 
 ### Example
