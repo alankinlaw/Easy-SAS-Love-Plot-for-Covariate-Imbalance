@@ -11,8 +11,9 @@ Updated: 10 May 2020
 
 ## Goal
 
-To create a figure that shows covariate imbalance across levels of a binary treatment/exposure before and after adjustment by weighting or matching.
+To create a figure that shows covariate imbalance across levels of a binary treatment/exposure before and after adjustment by weighting or matching. An example image using default options from the %love macro:
 
+![](https://github.com/alankinlaw/Easy-SAS-Love-Plot-for-Covariate-Imbalance/blob/master/folder/love_sorted_Weighted__1_bands_20200510T174441.png {width=100px)
 
 ## Inputs
 
