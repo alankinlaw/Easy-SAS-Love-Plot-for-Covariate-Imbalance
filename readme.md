@@ -64,17 +64,19 @@ A figure (.png file) that displays standardized mean differences for each covari
 		
       - A third option is to use neither bands nor lines, which leaves no guide for the reader's eye. If this is desired, then specify "HORIZONTAL = " in your call of the %love macro.
 	
-5. Execute the macro. Example call:
+5. Execute the macro. 
 
-		* Example macro call for a magnitude-sorted, weight-based figure using defaults for parameters iv (0.1) and v (bands) ;
-		%love(working_directory = insert-filepath-here,
-			  sortchoice = sorted,
-			  method = WEIGHT);
+   - Example macro call for a magnitude-sorted, weight-based figure using defaults for parameters iv (0.1) and v (bands):
+   
+ 	%love(working_directory = insert-filepath-here,
+	      sortchoice = sorted,
+	      method = WEIGHT);
 
 ### Example
 
 
 ![](C:\Users\akinlaw\OneDrive - University of North Carolina at Chapel Hill\Textandtools\Tools - SAS\easy-love-plot\love_sorted_Weighted__1_bands_20200510T174441.png)
+ 
  
 ### License and warranty information
 
