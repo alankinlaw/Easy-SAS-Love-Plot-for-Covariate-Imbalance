@@ -64,9 +64,17 @@ A figure (.png file) displaying crude and weighted or matched standardized diffe
 		
       - A third option is to use neither bands nor lines, which leaves no guide for the reader's eye. If this is desired, then specify "HORIZONTAL = " in your call of the %love macro.
 	
+5. Execute the macro. Example call:
+
+		* Example macro call for a magnitude-sorted, weight-based figure using defaults for parameters iv and v ;
+		%love(working_directory = C:\Users\akinlaw,
+			  sortchoice = sorted,
+			  method = WEIGHT);
 
 ### Example
-![](https://github.com/alankinlaw/Easy-Love-Plot/blob/master/example.png)
+
+
+![](C:\Users\akinlaw\OneDrive - University of North Carolina at Chapel Hill\Textandtools\Tools - SAS\easy-love-plot\love_sorted_Weighted__1_bands_20200510T174441.png)
  
 ### License and warranty information
 
