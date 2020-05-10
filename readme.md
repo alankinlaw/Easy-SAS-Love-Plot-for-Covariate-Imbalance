@@ -68,7 +68,7 @@ A figure (.png file) that displays standardized mean differences for each covari
 
    - Example macro call for a magnitude-sorted, weight-based figure using defaults for parameters iv (0.1) and v (bands):
    
- 	%love(working_directory = insert-filepath-here,
+     	%love(working_directory = <i>insert-filepath-here</i>,
 	      sortchoice = sorted,
 	      method = WEIGHT);
 
