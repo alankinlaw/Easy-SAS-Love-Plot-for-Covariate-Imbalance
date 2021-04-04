@@ -1,10 +1,10 @@
 # Easy-SAS-Love-Plot-for-Covariate-Imbalance
 
-The <b>%love</b> SAS macro (love.sas) allows the user to quickly and easily produce graphical displays of covariate imbalance before and after adjustment, based on plots developed by Thomas Love.
+The <b>%love</b> SAS macro (love.sas) allows the user to quickly and easily produce graphical displays of covariate imbalance before and after adjustment (or in crude data only if preferred), based on plots developed by Thomas Love.
 
 Author: Alan Kinlaw
 
-Created: 09 May 2020; Updated: 10 May 2020
+Created: 09 May 2020; Updated: 4 April 2021
 
 
 ## Goal
@@ -17,11 +17,13 @@ To create a figure that shows covariate imbalance across levels of a binary trea
 
 Standardized mean differences can either be generated in SAS or imported into SAS, and then fed into to this macro.
 
-The input dataset must be named <b>TABLE.SAS7BDAT</b> and contain three columns:
+The input dataset must be named <b>TABLE.SAS7BDAT</b> and must contain two columns:
 
 1. <i>COVARIATE</i>: a list of the names of each covariate for which balance across exposure/treatment groups is being assessed, written as you might want it to appear in a manuscript's typical Table 1;
 
-2. <i>CRUDE</i>: standardized mean differences for each covariate in the crude (unadjusted) data; and 
+2. <i>CRUDE</i>: standardized mean differences for each covariate in the crude (unadjusted) data.
+
+If the user wishes to display balance before and after adjustment, this input dataset can contain a third column: 
 
 3. <i>POST</i>: standardized mean differences for each covariate after weighting, matching, or standardization 
 
@@ -45,8 +47,10 @@ A figure (.png file) that displays standardized mean differences for each covari
 		
       - <i>ORIGINAL</i>: The figure will display covariates in the order provided in the input dataset.
 			
-   iii. The <b>METHOD</b> parameter has two specification options, "w" or "m" (not case sensitive):
+   iii. The <b>METHOD</b> parameter has three specification options, "n" or "w" or "m" (not case sensitive):
    
+      - <i>N</i>: The figure key specify only that covariate balance is shown only for crude data (n=none).
+      
       - <i>W</i>: The figure key will specify that weighting was used to balance covariates.
 		
       - <i>M</i>: The figure key will specify that matching was used to balance covariates. 
