@@ -1,78 +1,41 @@
 /*************************************************************************************************************************
 
-
-
 Title: Easy-SAS-Love-Plot-for-Covariate-Imbalance (%love macro)
 
-
-
 The %love SAS macro allows the user to quickly and easily produce graphical displays of covariate imbalance 
-
 before and after adjustment, based on plots developed by Thomas Love.
 
-
-
 Author: Alan Kinlaw
-
 Created: 09 May 2020
-
 Updated: 4 April 2021
 
-
-
-README
-
-
+README contents
 
 Goal: To create a figure that shows covariate imbalance across levels of a binary treatment/exposure 
-
 before and after adjustment by weighting or matching.
-
-
 
 Inputs:
 
-
-
 	Standardized mean differences can either be generated in SAS or imported into SAS, and then fed 
-
 	into to this macro.
 
-
-
 	The input dataset must be named TABLE.SAS7BDAT and must contain two columns:
-
    		1. COVARIATE: a list of the names of each covariate for which balance across exposure/treatment groups is being 
 			      assessed, written as you might want it to appear in a manuscript's typical Table 1;
-
     		2. CRUDE: standardized mean differences for each covariate in the crude (unadjusted) data.
 
 	If the user wishes to display balance before and after adjustment, this input dataset should contain a third column:
-
     		3. POST: standardized mean differences for each covariate after weighting, matching, or standardization.
 
 	The input dataset can contain more than these three variables, but only these three will be used by 
-
 	the %love macro.
-
-
-
-
-
 
 Outputs:
 
-
-
 	A figure (.png file) that displays standardized mean differences for each covariate of interest in 
-
 	crude and adjusted data.
 
-
-
 Steps:
-
-
 
     1. Generate the input dataset described above.
 
