@@ -40,27 +40,23 @@ Inputs:
 
 
 
-	The INPUT DATASET must contain three columns:
+	The input dataset must be named TABLE.SAS7BDAT and must contain two columns:
 
+   		1. COVARIATE: a list of the names of each covariate for which balance across exposure/treatment groups is being 
+			      assessed, written as you might want it to appear in a manuscript's typical Table 1;
 
+    		2. CRUDE: standardized mean differences for each covariate in the crude (unadjusted) data.
 
-	    1. COVARIATE: a list of the names of each covariate for which balance across exposure/treatment 
+	If the user wishes to display balance before and after adjustment, this input dataset should contain a third column:
 
-		groups is being assessed, written as you might want it to appear in a manuscript's typical Table 1;
-
-
-
-	    2. CRUDE: standardized mean differences for each covariate in the crude (unadjusted) data; and
-
-
-
-	    3. POST: standardized mean differences for each covariate after weighting, matching, or standardization
-
-
+    		3. POST: standardized mean differences for each covariate after weighting, matching, or standardization.
 
 	The input dataset can contain more than these three variables, but only these three will be used by 
 
 	the %love macro.
+
+
+
 
 
 
@@ -80,92 +76,47 @@ Steps:
 
     1. Generate the input dataset described above.
 
-
-
     2. Identify filepath for the working directory that holds the input dataset and will be the target 
-
 	location for the output figure.
-
-
 
     3. Specify the three required input parameters for the %love macro (i-iii):
 
-
-
 	    i. The WORKING_DIRECTORY parameter: Specify the directory that contains the input dataset and 
-
 		where the final plots will be stored.
-
-
 
 	    ii. The SORTCHOICE parameter has two specification options, "sorted" or "original" (not case sensitive):
 
-
-
 	        SORTED: The figure will display covariates in descending magnitude of crude 
-
 			standardized mean difference.
-
-
-
 	        ORIGINAL: The figure will display covariates in the order provided in the input dataset.
-
-
 
 	    iii. The METHOD parameter has three specification options, which are not case-sensitive:
 
-
-			N: Only crude data were provided, and no matching, weighting, or standardization was done.
-	
+		N: Only crude data were provided, and no matching, weighting, or standardization was done.
 	        W: The figure key will specify that weighting was used to balance covariates.
-
 	        M: The figure key will specify that matching was used to balance covariates.
 
-
-
 	4. If desired, two optional parameters may be modified in the macro call. These will receive default 
-
 	values if not modified.
 
-
-
 	    iv. The THRESHOLD parameter: Specify the absolute value of your threshold for identifying potentially 
-
 		meaningful covariate imbalance. This will generate reference lines in the figure. If you do not want 
-
 		threshold reference lines in the figure, then specify a value of threshold=0 in your call of the %love 
-
 		macro. The default threshold is 0.1.
-
-
 
 	    v. The HORIZONTAL parameter has two recommended specification options, "bands" or "lines" (case sensitive).
 
-
-
 	        bands: This default setting will use light gray horizontal bands to guide the reader's eye 	
-
 			horizontally across the figure from covariate names to their standardized mean differences.
-
-
-
 	        lines: The figure will use light gray horizontal lines to guide the reader's eye from labels to values.
-
-
 
 	        A third option is to use neither bands nor lines, which leaves no guide for the reader's eye. If this 
 
 			is desired, then specify "HORIZONTAL = " in your call of the %love macro.
 
-
-
     5. Execute the macro.
 
-
-
         Example macro call for a magnitude-sorted, weight-based figure using defaults for parameters iv (0.1) and v (bands):
-
-
 
         %love(working_directory = insert-filepath-here, 
 
