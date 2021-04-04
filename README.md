@@ -23,9 +23,9 @@ The input dataset must be named <b>TABLE.SAS7BDAT</b> and must contain two colum
 
 2. <i>CRUDE</i>: standardized mean differences for each covariate in the crude (unadjusted) data.
 
-If the user wishes to display balance before and after adjustment, this input dataset can contain a third column: 
+If the user wishes to display balance before and after adjustment, this input dataset should contain a third column: 
 
-3. <i>POST</i>: standardized mean differences for each covariate after weighting, matching, or standardization 
+3. <i>POST</i>: standardized mean differences for each covariate after weighting, matching, or standardization. 
 
 The input dataset can contain more than these three variables, but only these three will be used by the %love macro.
 
