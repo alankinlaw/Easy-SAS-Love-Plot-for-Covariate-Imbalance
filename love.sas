@@ -74,190 +74,99 @@ Steps:
 	        lines: The figure will use light gray horizontal lines to guide the reader's eye from labels to values.
 
 	        A third option is to use neither bands nor lines, which leaves no guide for the reader's eye. If this 
-
 			is desired, then specify "HORIZONTAL = " in your call of the %love macro.
 
     5. Execute the macro.
 
         Example macro call for a magnitude-sorted, weight-based figure using defaults for parameters iv (0.1) and v (bands):
-
         %love(working_directory = insert-filepath-here, 
-
 			  sortchoice = sorted, 
-
 			  method = WEIGHT);
-
-
 
 ****************************************************************************************************************************/
 
-
-
 options mprint mlogic;
 
-
-
 %macro love(working_directory, sortchoice, method, threshold=.1, horizontal=bands);
-
 	%let gpath="&working_directory"; %let path=&working_directory; %let dpi=300; 
-
 	%if &method = w or &method = W %then %let method = Weighted; %else %if &method = m or &method = M %then %let method = Matched; 
-
 	%if &horizontal = bands %then %let horizontal2 = colorbands=even colorbandsattrs=(color=black transparency=0.95);
-
 	%else %if &horizontal = lines %then %let horizontal2 = grid;
-
 	%else %if &horizontal =  %then %let horizontal2 = ;
-
 	data _null_; call symputx('timestamp', put(datetime(), B8601DT.)); run;
-
 	ods graphics / reset noborder imagename="love_&sortchoice._&method._&threshold._&horizontal._&timestamp"; ods html close; ods listing gpath=&gpath image_dpi=&dpi; 
 
-
-
 	data table_original; set table; abscrude = abs(crude); abspost = abs(post); maxabs10 = max(abspost,abscrude)*10; ulimit = ceil(maxabs10)/10; llimit = ulimit*(-1); run;
-
 	proc sql noprint; select min(llimit) into :lowerbound from table_original; select max(ulimit) into :upperbound from table_original;	quit;
-
 	proc sort data=table_original out=table_sorted; by descending crude; run;
-
 	
-
 	%if &method = n or &method = N or method = none %then %do;
-
 		%if &threshold ne 0 %then %do;
-
 			proc sgplot data=table_&sortchoice noborder;
-
 				refline -&threshold &threshold / name="reflines" legendlabel = "Thresholds" axis=x lineattrs=(pattern=dot color=black);
-
 				refline 0 / axis=x lineattrs=(color=black);	
-
 				scatter y=covariate x=crude / name="scatter1" legendlabel="Crude data" markerattrs=(symbol=diamond color=black) markeroutlineattrs=(color=black thickness=2);
-
 				yaxistable covariate / location=outside position=left valuejustify=left valueattrs=(size=7) nolabel labelattrs=(size=8);
-
 				xaxis min=&lowerbound max=&upperbound values=(&lowerbound to &upperbound by .2) label='Standardized mean difference' ;	
-
 				yaxis &horizontal2 fitpolicy=none valueattrs=(size=7) reverse display=none;
-
 				keylegend "scatter1" "scatter2" "reflines" / location=inside position=bottomright outerpad=15 opaque down=3;
-
 				run;	
-
 			%end;
-
 		%else %if &threshold = 0 %then %do;
-
 			proc sgplot data=table_&sortchoice noborder;
-
 				refline 0 / axis=x lineattrs=(color=black);	
-
 				scatter y=covariate x=crude / name="scatter1" legendlabel="Crude data" markerattrs=(symbol=diamond color=black) markeroutlineattrs=(color=black thickness=2);
-
 				yaxistable covariate / location=outside position=left valuejustify=left valueattrs=(size=7) nolabel labelattrs=(size=8);
-
 				xaxis min=&lowerbound max=&upperbound values=(&lowerbound to &upperbound by .2) label='Standardized mean difference' ;	
-
 				yaxis &horizontal fitpolicy=none valueattrs=(size=7) reverse display=none;
-
 				keylegend "scatter1" "scatter2" / location=inside position=bottomright outerpad=15 opaque down=3;
-
 				run;
-
 			%end;
 		%end;
-
 	 %else %if &method = w or &method = W or &method = m or &method = M %then %do;
-
 		%if &threshold ne 0 %then %do;
-
 			proc sgplot data=table_&sortchoice noborder;
-
 				refline -&threshold &threshold / name="reflines" legendlabel = "Thresholds" axis=x lineattrs=(pattern=dot color=black);
-
 				refline 0 / axis=x lineattrs=(color=black);	
-
 				scatter y=covariate x=crude / name="scatter1" legendlabel="Crude" markerattrs=(symbol=diamond color=black) markeroutlineattrs=(color=black thickness=2);
-
 				scatter y=covariate x=post / name="scatter2" legendlabel="&method" markerattrs=(symbol=circlefilled color=black);
-
 				yaxistable covariate / location=outside position=left valuejustify=left valueattrs=(size=7) nolabel labelattrs=(size=8);
-
 				xaxis min=&lowerbound max=&upperbound values=(&lowerbound to &upperbound by .2) label='Standardized mean difference' ;	
-
 				yaxis &horizontal2 fitpolicy=none valueattrs=(size=7) reverse display=none;
-
 				keylegend "scatter1" "scatter2" "reflines" / location=inside position=bottomright outerpad=15 opaque down=3;
-
 				run;	
-
 			%end;
-
 		%else %if &threshold = 0 %then %do;
-
 			proc sgplot data=table_&sortchoice noborder;
-
 				refline 0 / axis=x lineattrs=(color=black);	
-
 				scatter y=covariate x=crude / name="scatter1" legendlabel="Crude" markerattrs=(symbol=diamond color=black) markeroutlineattrs=(color=black thickness=2);
-
 				scatter y=covariate x=post / name="scatter2" legendlabel="&method" markerattrs=(symbol=circlefilled color=black);
-
 				yaxistable covariate / location=outside position=left valuejustify=left valueattrs=(size=7) nolabel labelattrs=(size=8);
-
 				xaxis min=&lowerbound max=&upperbound values=(&lowerbound to &upperbound by .2) label='Standardized mean difference' ;	
-
 				yaxis &horizontal fitpolicy=none valueattrs=(size=7) reverse display=none;
-
 				keylegend "scatter1" "scatter2" / location=inside position=bottomright outerpad=15 opaque down=3;
-
 				run;
-
 			%end;
 		%end;
-
-
 %mend;
-
-
 
 * To uncomment an example call, highlight it and simultaneously type CTRL+SHIFT+/ --- to recomment it out, highlight it and simultaneously type CTRL+/ ;
 
-
-
 * Example macro call for a magnitude-sorted, weighting-based figure that uses defaults for threshold and eye-guide parameters (D,E);
-
 /*%love(working_directory = insert-filepath-here,*/
-
 /*	  sortchoice = sorted,*/
-
 /*	  method = w);*/
 
-
-
 * Example macro call for an original-order, weighting-based figure that changes the balance threshold to 0.08 and uses eye-guide lines instead of bands;
-
 /*%love(working_directory = insert-filepath-here,*/
-
 /*	  sortchoice = original,*/
-
 /*	  method = w,*/
-
 /*	  threshold = 0.08,*/
-
 /*	  horizontal = lines);*/
 
-
-
 * Example macro call for a magnitude-sorted, matching-based figure that eliminates threshold lines and eye-guide lines or bands;
-
 /*%love(working_directory = insert-filepath-here,*/
-
 /*	  sortchoice = sorted,*/
-
 /*	  method = m,*/
-
 /*	  threshold = 0,*/
-
 /*	  horizontal =);*/
