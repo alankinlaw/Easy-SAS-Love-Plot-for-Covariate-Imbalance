@@ -123,7 +123,7 @@ options mprint mlogic;
 				run;
 			%end;
 		%end;
-	 %else %if &method = w or &method = W or &method = Weighted &method = m or &method = M or &method = Matched %then %do;
+	 %else %if &method = w or &method = W or &method = Weighted or &method = m or &method = M or &method = Matched %then %do;
 		%if &threshold ne 0 %then %do;
 			proc sgplot data=table_&sortchoice noborder;
 				refline -&threshold &threshold / name="reflines" legendlabel = "Thresholds" axis=x lineattrs=(pattern=dot color=black);
